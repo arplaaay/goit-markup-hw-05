@@ -30,8 +30,8 @@
           <ul class="nav-list list-decor">
             <li class="item">
               <a href="./index.html" class="nav-link current-page link-decor"
-                >Студия</a
-              >
+                >Студия
+              </a>
             </li>
             <li class="item">
               <a href="./pages/portfolio.html" class="nav-link link-decor"
@@ -79,7 +79,9 @@
             для вашего бизнеса
           </h1>
 
-          <button type="button" class="hero-button">Заказать услугу</button>
+          <button type="button" class="hero-button" data-modal-open>
+            Заказать услугу
+          </button>
         </div>
       </section>
 
@@ -160,23 +162,38 @@
           <ul class="list-decor task-list">
             <li class="item">
               <a href="#" class="link-decor">
-                <img src="./images/work1.jpg" alt="Пишем код" width="370" />
+                <div class="task-banner">
+                  <img src="./images/work1.jpg" alt="Пишем код" width="370" />
+                  <div class="banner-div">
+                    <h3 class="banner-text">Десктопные приложения</h3>
+                  </div>
+                </div>
               </a>
             </li>
 
             <li class="item">
               <a href="#" class="link-decor">
-                <img src="./images/work2.jpg" alt="Продвигаем" width="370" />
+                <div class="task-banner">
+                  <img src="./images/work2.jpg" alt="Продвигаем" width="370" />
+                  <div class="banner-div">
+                    <h3 class="banner-text">Мобильные приложения</h3>
+                  </div>
+                </div>
               </a>
             </li>
 
             <li class="item">
               <a href="#" class="link-decor">
-                <img
-                  src="./images/work3.jpg"
-                  alt="Разрабатываем дизайн"
-                  width="370"
-                />
+                <div class="task-banner">
+                  <img
+                    src="./images/work3.jpg"
+                    alt="Разрабатываем дизайн"
+                    width="370"
+                  />
+                  <div class="banner-div">
+                    <h3 class="banner-text">Дизайнерские решения</h3>
+                  </div>
+                </div>
               </a>
             </li>
           </ul>
@@ -239,7 +256,7 @@
             <li class="item">
               <img src="./images/person2.jpg" alt="Ольга Репина" width="270" />
               <div class="item-wrapper">
-                <h3 class="team-person-hdr">Ольга Репина</h3>
+                <h3 class="team-person-hdr">Ольгввсвсвсва Репина</h3>
 
                 <p class="team-person-dscrpt">Frontend Developer</p>
 
@@ -500,5 +517,24 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-btn" data-modal-close>
+          <svg
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="modal-icon-close"
+          >
+            <path
+              d="M15 4.108L13.892 3 9.5 7.392 5.108 3 4 4.108 8.392 8.5 4 12.892 5.108 14 9.5 9.608 13.892 14 15 12.892 10.608 8.5 15 4.108z"
+              fill="#000"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

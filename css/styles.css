@@ -102,15 +102,34 @@ button {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--title-text-color);
+
+  position: relative;
 }
 
 .nav-link:hover,
 .nav-link:focus {
   color: var(--extra-color);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .current-page {
   color: var(--extra-color);
+}
+
+.current-page::after {
+  display: inline-block;
+  position: absolute;
+  content: "";
+
+  width: 100%;
+  height: 4px;
+  bottom: -1px;
+  left: 0;
+
+  border-radius: 2px;
+  background-color: var(--extra-color);
 }
 
 .nav-list {
@@ -141,6 +160,9 @@ button {
 .contacts-link:focus {
   color: var(--extra-color);
   fill: var(--extra-color);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .contacts {
@@ -289,6 +311,7 @@ button {
 }
 
 /* Задачи */
+
 .task-hdr {
   font-weight: bold;
   font-size: 36px;
@@ -306,6 +329,33 @@ button {
 
 .task-list .item:not(:last-child) {
   margin-right: 30px;
+}
+
+.task-banner {
+  position: relative;
+}
+
+.banner-div {
+  position: absolute;
+
+  width: 100%;
+  height: 70px;
+  bottom: 0;
+
+  padding: 27px 0;
+
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.banner-text {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--bg-primary-color);
 }
 
 /* Команда */
@@ -397,6 +447,9 @@ button {
 .social-link:hover {
   background: var(--extra-color);
   fill: var(--bg-primary-color);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 /* Клиенты */
@@ -452,11 +505,17 @@ button {
 .clients-list .item:hover,
 .clients-list .item:focus {
   border-color: var(--extra-color);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .clients-list .link:hover,
 .clients-list .link:focus {
   fill: var(--extra-color);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 /* Main для portfolio.html =======================================================================*/
@@ -498,6 +557,9 @@ button {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   color: var(--bg-primary-color);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .current-filter {
@@ -531,6 +593,9 @@ button {
 .card:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .card-content {
@@ -632,6 +697,9 @@ button {
 .social-link-ftr:hover {
   background: var(--extra-color);
   fill: var(--bg-primary-color);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .mail-ftr {
@@ -661,4 +729,55 @@ button {
 
 .address-div {
   margin-right: 70px;
+}
+
+/* =============== Модальное окно =============== */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+
+  background: var(--bg-primary-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  border-radius: 4px;
+}
+
+.modal-btn {
+  display: flex;
+
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  background: var(--bg-primary-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--extra-color);
+
+  cursor: pointer;
 }
