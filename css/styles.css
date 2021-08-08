@@ -588,8 +588,6 @@ button {
 .card {
   display: block;
   cursor: pointer;
-
-  position: relative;
 }
 
 .card:hover {
@@ -597,7 +595,7 @@ button {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 250ms;
+  transition: 250ms;
 }
 
 .card-content {
@@ -605,9 +603,15 @@ button {
   border: 1px solid var(--card-border);
 }
 
-.card-info{
+.card-thumb {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.card-info {
   position: absolute;
-  top: 10%;
+  top: 100%;
   left: 0;
 
   width: 100%;
@@ -616,12 +620,13 @@ button {
 
   background-color: rgba(33, 150, 243, 0.9);
 
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition: 250ms;
 
   opacity: 0;
 }
 
-.card-info:hover{
+.card-thumb > *:hover {
   opacity: 1;
   top: 0;
 }
@@ -633,7 +638,6 @@ button {
 
   color: var(--bg-primary-color);
 }
-
 
 .project-hdr {
   font-weight: bold;
